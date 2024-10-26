@@ -99,7 +99,7 @@ function App() {
   }
 
   // Function to handle the number chosen, this will be passed to the PlayNumber component
-  const numberChosenHandler = (tile: gameButton) => {
+  const handleGameButton = (tile: gameButton) => {
     setGame((prevState) => ({
       ...prevState,
       currentSelections: [...prevState.currentSelections, tile],
@@ -123,7 +123,7 @@ function App() {
               state={game.state}
               currentSelectionsCount={game.currentSelections.length}
               maxSelections={4}
-              onNumberChosen={numberChosenHandler}
+              handleGameChoice={handleGameButton}
             />
           ))}
         </div>
